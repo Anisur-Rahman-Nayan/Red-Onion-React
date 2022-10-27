@@ -1,0 +1,16 @@
+.food-area nav li{
+    color: black;
+    cursor: pointer;
+    font-weight: 600;
+}
+.food-area nav .active{
+    color: red;
+}
+.food-area nav .active::after {
+	content: "";
+	width: 80%;
+	margin: 10px auto;
+	height: 1px;
+	background-color: rgb(255, 69, 101);
+	display: block;
+}
