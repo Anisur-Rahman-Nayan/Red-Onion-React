@@ -33,7 +33,7 @@ const Foods = () => {
                     </ul>
                 </nav>
 
-                <div>
+                <div className='row my-5'>
                     {
                         selectedFoods.map(food=> <FoodItems food={food} key={food.id}></FoodItems>)
                     }
@@ -63,7 +63,7 @@ const Foods = () => {
                     </ul>
                 </nav>
 
-                <div>
+                <div className='row my-5'>
                 {
                     selectedFastFood.map(food=> <FoodItems food={food} key={food.id}></FoodItems>)
                 }
