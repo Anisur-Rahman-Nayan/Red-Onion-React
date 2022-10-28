@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from '../../images/logo2.png'
 import './Header.css'
 
@@ -16,17 +17,17 @@ const Header = () => {
        
     <Nav>
       <Nav.Item>
-        <Nav.Link className='nav-color' href="/home">Home</Nav.Link>
+        <Link className='nav-color' to="/home">Home</Link>
       </Nav.Item>
       <Nav.Item >
-        <Nav.Link className='nav-color' href="/orderreview">Order Review</Nav.Link>
+        <Link className='nav-color' to="/orderreview">Order Review</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link className='nav-color' href="/about">About Us</Nav.Link>
+        <Link className='nav-color' to="/about">About Us</Link>
       </Nav.Item>
-      <Navbar.Text className='nav-color nav-space'>
-            Signed in as: <a href="#login">Nayan</a>
-          </Navbar.Text>
+      <Nav.Item>
+        <Link className='nav-color' to="/login">Signed in as: Nayan</Link>
+      </Nav.Item>
     </Nav>
 
 

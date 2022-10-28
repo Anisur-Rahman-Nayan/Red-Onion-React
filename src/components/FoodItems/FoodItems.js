@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './FoodItems.css'
 
 const FoodItems = (props) => {
     const {id, name, description , price, img} = props.food;
 
     return (
         <div className='col-md-4 mb-4'>
-            <Link to={'food/'+ id}>
-            <div className='card text-center'>
-                <img src={img} alt="" />
+            <Link className='underlineRemove' to={'food/'+ id}>
+            <div className='card text-center' >
+               <div> <img width={250} src={img} alt="" /></div>
             <div>
-                <h5>{name}</h5>
-                <p>{description}</p>
-                <h4>$ {price.toFixed(2)}</h4>
+                <h5 className='food-info'>{name}</h5>
+                <p className='food-info' >{description}</p>
+                <h4 className='food-info'>$ {price.toFixed(2)}</h4>
             </div>
             </div>
             </Link>

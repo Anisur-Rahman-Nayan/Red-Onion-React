@@ -9,3 +9,10 @@ nav .nav-color{
 nav .nav-space{
     margin-left: 10px;
 }
+.nav-color{
+    text-decoration: none;
+    margin-right: 15px;
+}
+.nav-color:hover{
+    color: red;
+}
