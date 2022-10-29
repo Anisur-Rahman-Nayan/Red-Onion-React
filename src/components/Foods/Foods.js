@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import allFoods from '../../fakeData/index'
 import FoodItems from '../FoodItems/FoodItems';
 import './Foods.css'
-const Foods = () => {
+const Foods = (props) => {
 
         const [foods, setFoods] = useState([])
         const [selectedFoodType, setSelectedFoodType] = useState('lunch')
@@ -68,6 +69,21 @@ const Foods = () => {
                     selectedFastFood.map(food=> <FoodItems food={food} key={food.id}></FoodItems>)
                 }
                 </div>
+
+
+                <div className="text-center">
+					{props.cart?.length ? (
+						<Link to="/orderreview">
+							<button className="btn btn-danger">Check Out Your Food</button>
+						</Link>
+					) : (
+						<button disabled className="btn btn-secondary">
+							Check Out Your Food
+						</button>
+					)}
+				</div>
+
+
 
             </div>
 

@@ -1,0 +1,11 @@
+.borderStyle{
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 20px 20px 50px 10px gainsboro inset;
+    width: 60%;    
+}
+.info{
+    color: black;
+}
+
