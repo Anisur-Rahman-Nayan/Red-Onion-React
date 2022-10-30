@@ -1,0 +1,24 @@
+.bg-color {
+	background-color: rgb(39, 39, 39);
+}
+
+.text-color {
+	color: rgb(255, 69, 101);
+}
+
+footer img {
+	height: 70px;
+}
+
+footer a {
+	color: #ffffff;
+	line-height: 2;
+    
+}
+
+footer a:hover {
+	color: rgb(255, 69, 101);
+}
+.list-unstyled li a{
+    text-decoration: none;
+}

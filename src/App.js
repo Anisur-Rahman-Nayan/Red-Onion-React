@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Blog from './components/Blog/Blog';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import Foods from './components/Foods/Foods';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import HeaderImage from './components/HeaderImage/HeaderImage';
 import Review from './components/Review/Review';
 import Shipment from './components/Shipment/Shipment'
+import Search  from './components/Search/Search';
 
 function App() {
 
@@ -31,7 +34,7 @@ function App() {
   return (
     <div>
         <Header cart={cart}></Header>
-        {/* <HeaderImage></HeaderImage> */}
+        <HeaderImage></HeaderImage>
 
         <Routes>
           <Route path='/' element={<Foods cart={cart}></Foods>} ></Route>
@@ -40,7 +43,11 @@ function App() {
           <Route path='home/food/:foodId' element={<FoodDetails cartHandler={cartHandler}></FoodDetails>}></Route>
           <Route path='/orderreview' element={<Review cart={cart}></Review>}></Route>
           <Route path='/shipment' element={<Shipment cart={cart}></Shipment>}></Route>
+          <Route path='/search=:searchQuery' element={<Search></Search>}></Route>
         </Routes>
+      <Blog></Blog>
+    <Footer></Footer>
+
     </div>
   );
 }

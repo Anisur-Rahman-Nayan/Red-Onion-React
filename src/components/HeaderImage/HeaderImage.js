@@ -1,11 +1,30 @@
-import React from 'react';
-import bannerbackground from '../../images/bannerbackground.png'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './HeaderImage.css'
 const HeaderImage = () => {
+    const [searchQuery, setSearchQuery] = useState(null);
+    const getQuery = (event) =>{
+        setSearchQuery(event.target.value);
+    } 
     return (
-        <div className='bannerImg'>
-            <img src={bannerbackground} alt="" />
+        <section className='banner d-flex align-items-center text-center'>
+        <div className='container'>
+            <h1>Best Food Waiting For Your Belly</h1>
+
+            <div className='search-box col-md-6 my-5 mx-auto'>
+                <input
+                    type="text"
+                    id="query"
+                    onChange={getQuery}
+                    className='form-control'
+                    placeholder='Search Food Item'
+                />
+                <Link to={'/search=' + searchQuery}>
+                    <button onClick={() => window.scrollBy(0, 525)} className='btn btn-danger search-btn btn-rounded'>Search</button>
+                </Link>
+            </div>
         </div>
+    </section>
     );
 };
 
