@@ -10,6 +10,7 @@ import HeaderImage from './components/HeaderImage/HeaderImage';
 import Review from './components/Review/Review';
 import Shipment from './components/Shipment/Shipment'
 import Search  from './components/Search/Search';
+import NotFound from './components/HeaderImage/NotFound/NotFound';
 
 function App() {
 
@@ -34,19 +35,18 @@ function App() {
   return (
     <div>
         <Header cart={cart}></Header>
-        <HeaderImage></HeaderImage>
 
         <Routes>
-          <Route path='/' element={<Foods cart={cart}></Foods>} ></Route>
-          <Route path='/home' element={<Foods cart={cart}></Foods>}></Route>
+          {/* <Route path='/' element={<Foods cart={cart}></Foods>} ></Route> */}
+          <Route path='/' element={<div><HeaderImage/>,<Foods cart={cart}/> <Blog/> <Footer/></div>} ></Route>
+          <Route path='/home' element={<div><HeaderImage/>,<Foods cart={cart}/> <Blog/> <Footer/></div>}></Route>
           <Route path='food/:foodId' element={<FoodDetails cartHandler={cartHandler}></FoodDetails>}></Route>
           <Route path='home/food/:foodId' element={<FoodDetails cartHandler={cartHandler}></FoodDetails>}></Route>
           <Route path='/orderreview' element={<Review cart={cart}></Review>}></Route>
           <Route path='/shipment' element={<Shipment cart={cart}></Shipment>}></Route>
           <Route path='/search=:searchQuery' element={<Search></Search>}></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
-      <Blog></Blog>
-    <Footer></Footer>
 
     </div>
   );
