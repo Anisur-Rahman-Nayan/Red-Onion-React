@@ -11,6 +11,8 @@ import Review from './components/Review/Review';
 import Shipment from './components/Shipment/Shipment'
 import Search  from './components/Search/Search';
 import NotFound from './components/HeaderImage/NotFound/NotFound';
+import SignUp from './components/SignUp/SignUp';
+import RequireAuth from './components/RequireAuth/RequireAuth';
 
 function App() {
 
@@ -43,7 +45,13 @@ function App() {
           <Route path='food/:foodId' element={<FoodDetails cartHandler={cartHandler}></FoodDetails>}></Route>
           <Route path='home/food/:foodId' element={<FoodDetails cartHandler={cartHandler}></FoodDetails>}></Route>
           <Route path='/orderreview' element={<Review cart={cart}></Review>}></Route>
-          <Route path='/shipment' element={<Shipment cart={cart}></Shipment>}></Route>
+            <Route path='/shipment' element={
+              <RequireAuth>
+                <Shipment cart={cart}></Shipment>
+              </RequireAuth>
+            }></Route>
+          {/* <Route path='/shipment' element={<Shipment cart={cart}></Shipment>}></Route> */}
+          <Route path='/signin' element={<SignUp></SignUp>}></Route>
           <Route path='/search=:searchQuery' element={<Search></Search>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
         </Routes>
